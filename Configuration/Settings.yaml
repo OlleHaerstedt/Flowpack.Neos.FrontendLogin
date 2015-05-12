@@ -4,9 +4,9 @@ TYPO3:
     security:
       authentication:
         providers:
-          'Typo3BackendProvider':
-            requestPatterns:
-              'Flowpack\Neos\FrontendLogin\Security\NeosRequestPattern': 'backend'
+          #'Typo3BackendProvider':
+          #requestPatterns:
+          #'Flowpack\Neos\FrontendLogin\Security\NeosRequestPattern': 'backend'
           'Flowpack.Neos.FrontendLogin:Frontend':
             provider: 'PersistedUsernamePasswordProvider'
             requestPatterns:

@@ -4,7 +4,6 @@
     "description": "TYPO3 Neos plugin implementing a simple frontend login",
     "license": "MIT",
     "require": {
-        "typo3/neos": "dev-master"
     },
     "autoload": {
         "psr-0": {
