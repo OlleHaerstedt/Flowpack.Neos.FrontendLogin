@@ -29,4 +29,19 @@ class UserRepository extends Repository {
 			->getFirst();
 	}
 
+  /**
+   * Return all users with at least one account with role $role
+   *
+   * @param string $roleIdentifier
+   * @return array result
+   */
+  public function findWithRole($roleIdentifier) {
+    $query = $this->createQuery();
+    return
+      $query->matching(
+        $query->like('accounts.roleIdentifiers', '%' . $roleIdentifier . '%')
+      )
+      ->execute();
+  }
+
 }
