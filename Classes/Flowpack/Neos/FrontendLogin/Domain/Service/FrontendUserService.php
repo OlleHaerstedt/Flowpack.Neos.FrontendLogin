@@ -97,6 +97,13 @@ class FrontendUserService {
 		return $this->userRepository->findOneHavingAccount($account);
 	}
 
+  /**
+   * @return Account The currently logged in account
+   */
+  public function getCurrentAccount() {
+    return $this->securityContext->getAccount();
+  }
+
 	/**
 	 * Creates a user based on the given information
 	 *
