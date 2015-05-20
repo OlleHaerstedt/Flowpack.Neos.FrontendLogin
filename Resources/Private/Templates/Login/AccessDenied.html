@@ -1,7 +1,17 @@
 <div class="col-lg-4">
 	<div class="panel panel-default">
 		<div class="panel-body">
-      <p>You don't have access to this page. Continue to <f:link.action action="index" controller="Login" package="Flowpack.Neos.FrontendLogin">login form</f:link.action>.</p>
+      <p>You don't have access to this page.</p>
+
+      <f:security.ifHasRole role="Flowpack.Neos.FrontendLogin:User">
+        <f:then>
+          <!-- User role has no access to this page. -->
+        </f:then>
+        <f:else>
+          <p>Continue to <f:link.action action="index" controller="Login" package="Flowpack.Neos.FrontendLogin">login form</f:link.action>.</p>
+        </f:else>
+      </f:security.ifHasRole>
+
     </div>
   </div>
 </div>
