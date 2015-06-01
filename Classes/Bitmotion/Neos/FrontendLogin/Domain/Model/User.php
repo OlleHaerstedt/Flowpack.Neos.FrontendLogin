@@ -1,8 +1,8 @@
 <?php
-namespace Flowpack\Neos\FrontendLogin\Domain\Model;
+namespace Bitmotion\Neos\FrontendLogin\Domain\Model;
 
 /*                                                                             *
- * This script belongs to the TYPO3 Flow package "Flowpack.Neos.FrontendLogin".*
+ * This script belongs to the TYPO3 Flow package "Bitmotion.Neos.FrontendLogin".*
  *                                                                             */
 
 use Doctrine\Common\Collections\ArrayCollection;

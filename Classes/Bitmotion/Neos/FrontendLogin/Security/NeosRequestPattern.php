@@ -1,8 +1,8 @@
 <?php
-namespace Flowpack\Neos\FrontendLogin\Security;
+namespace Bitmotion\Neos\FrontendLogin\Security;
 
 /*                                                                             *
- * This script belongs to the TYPO3 Flow package "Flowpack.Neos.FrontendLogin".*
+ * This script belongs to the TYPO3 Flow package "Bitmotion.Neos.FrontendLogin".*
  *                                                                             */
 
 use TYPO3\Flow\Mvc\ActionRequest;

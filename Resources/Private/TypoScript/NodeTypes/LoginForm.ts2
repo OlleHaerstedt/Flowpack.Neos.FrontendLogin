@@ -1,8 +1,8 @@
 ##
 # "LoginForm" element, extending "Plugin"
 #
-prototype(Flowpack.Neos.FrontendLogin:LoginForm) < prototype(TYPO3.Neos:Plugin) {
-	package = 'Flowpack.Neos.FrontendLogin'
+prototype(Bitmotion.Neos.FrontendLogin:LoginForm) < prototype(TYPO3.Neos:Plugin) {
+	package = 'Bitmotion.Neos.FrontendLogin'
 	controller = 'Login'
 	action = 'index'
 }

@@ -1,8 +1,8 @@
 <?php
-namespace Flowpack\Neos\FrontendLogin\Domain\Service;
+namespace Bitmotion\Neos\FrontendLogin\Domain\Service;
 
 /*                                                                             *
- * This script belongs to the TYPO3 Flow package "Flowpack.Neos.FrontendLogin".*
+ * This script belongs to the TYPO3 Flow package "Bitmotion.Neos.FrontendLogin".*
  *                                                                             */
 
 use TYPO3\Flow\Annotations as Flow;
@@ -14,8 +14,8 @@ use TYPO3\Flow\Security\Context;
 use TYPO3\Flow\Security\Cryptography\HashService;
 use TYPO3\Flow\Security\Policy\PolicyService;
 use TYPO3\Flow\Utility\Now;
-use Flowpack\Neos\FrontendLogin\Domain\Model\User;
-use Flowpack\Neos\FrontendLogin\Domain\Repository\UserRepository;
+use Bitmotion\Neos\FrontendLogin\Domain\Model\User;
+use Bitmotion\Neos\FrontendLogin\Domain\Repository\UserRepository;
 
 /**
  * Central authority to deal with "frontend users"
@@ -27,7 +27,7 @@ class FrontendUserService {
 	/**
 	 * @const string
 	 */
-	const ACCOUNT_AUTHENTICATION_PROVIDER = 'Flowpack.Neos.FrontendLogin:Frontend';
+	const ACCOUNT_AUTHENTICATION_PROVIDER = 'Bitmotion.Neos.FrontendLogin:Frontend';
 
 	/**
 	 * @Flow\Inject
@@ -115,7 +115,7 @@ class FrontendUserService {
 	 * @param array $roleIdentifiers A list of role identifiers to assign
 	 * @return void
 	 */
-	public function addUser(User $user, $username, $password, array $roleIdentifiers = array('Flowpack.Neos.FrontendLogin:User')) {
+	public function addUser(User $user, $username, $password, array $roleIdentifiers = array('Bitmotion.Neos.FrontendLogin:User')) {
 		$account = $this->accountFactory->createAccountWithPassword($username, $password, $roleIdentifiers, self::ACCOUNT_AUTHENTICATION_PROVIDER);
 		$user->addAccount($account);
 

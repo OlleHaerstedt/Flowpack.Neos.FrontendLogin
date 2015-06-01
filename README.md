@@ -1,4 +1,4 @@
-Flowpack.Neos.FrontendLogin
+Bitmotion.Neos.FrontendLogin
 ===========================
 
 TYPO3 Neos plugin demonstrating a simple "frontend login"
@@ -12,7 +12,7 @@ The good news is: We're working hard on improving support for Frontend-Logins.
 How-To:
 -------
 
-* Install the package to ``Packages/Plugin/Flowpack.Neos.FrontendLogin`` (e.g. via ``composer require flowpack/neos-frontendlogin:dev-master``)
+* Install the package to ``Packages/Plugin/Bitmotion.Neos.FrontendLogin`` (e.g. via ``composer require flowpack/neos-frontendlogin:dev-master``)
 * Run database migrations: ``./flow doctrine:migrate``
 * Login to the TYPO3 Neos backend and create a new page "Login" (e.g. at ``/login``)
 * On that page insert the new plugin ``Frontend login form``
@@ -39,7 +39,7 @@ privilegeTargets:
 
 roles:
 
-  'Flowpack.Neos.FrontendLogin:User':
+  'Bitmotion.Neos.FrontendLogin:User':
     privileges:
       -
           # Grant "frontend users" access to the "Member area"
@@ -66,7 +66,7 @@ add the following configuration there:
 
 ```yaml
 -
-  requestFilter: 'isPackage("Flowpack.Neos.FrontendLogin") && isController("Login") && isAction("index")'
+  requestFilter: 'isPackage("Bitmotion.Neos.FrontendLogin") && isController("Login") && isAction("index")'
   options:
     templatePathAndFilename: 'resource://Acme.YourPackage/Private/Templates/Login/Index.html'
 ```

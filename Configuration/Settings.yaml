@@ -6,17 +6,17 @@ TYPO3:
         providers:
           #'Typo3BackendProvider':
           #requestPatterns:
-          #'Flowpack\Neos\FrontendLogin\Security\NeosRequestPattern': 'backend'
-          'Flowpack.Neos.FrontendLogin:Frontend':
+          #'Bitmotion\Neos\FrontendLogin\Security\NeosRequestPattern': 'backend'
+          'Bitmotion.Neos.FrontendLogin:Frontend':
             provider: 'PersistedUsernamePasswordProvider'
             requestPatterns:
-              'Flowpack\Neos\FrontendLogin\Security\NeosRequestPattern': 'frontend'
+              'Bitmotion\Neos\FrontendLogin\Security\NeosRequestPattern': 'frontend'
 
     aop:
       globalObjects:
-        'frontendUserService': 'Flowpack\Neos\FrontendLogin\Domain\Service\FrontendUserService'
+        'frontendUserService': 'Bitmotion\Neos\FrontendLogin\Domain\Service\FrontendUserService'
 
   Neos:
     typoScript:
       autoInclude:
-        'Flowpack.Neos.FrontendLogin': TRUE
+        'Bitmotion.Neos.FrontendLogin': TRUE

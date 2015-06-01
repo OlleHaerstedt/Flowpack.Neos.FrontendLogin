@@ -2,10 +2,10 @@ privilegeTargets:
 
   'TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
 
-    'Flowpack.Neos.FrontendLogin:LoginForm':
-      matcher: 'method(TYPO3\Flow\Security\Authentication\Controller\AbstractAuthenticationController->(?<!initialize).*Action()) || method(Flowpack\Neos\FrontendLogin\Controller\LoginController->(?<!initialize).*Action())'
-    'Flowpack.Neos.FrontendLogin:UserProfile':
-      matcher: 'method(Flowpack\Neos\FrontendLogin\Controller\UserController->(?<!initialize).*Action())'
+    'Bitmotion.Neos.FrontendLogin:LoginForm':
+      matcher: 'method(TYPO3\Flow\Security\Authentication\Controller\AbstractAuthenticationController->(?<!initialize).*Action()) || method(Bitmotion\Neos\FrontendLogin\Controller\LoginController->(?<!initialize).*Action())'
+    'Bitmotion.Neos.FrontendLogin:UserProfile':
+      matcher: 'method(Bitmotion\Neos\FrontendLogin\Controller\UserController->(?<!initialize).*Action())'
 
 roles:
 
@@ -13,19 +13,19 @@ roles:
     privileges:
       -
           # Grant any user access to the FrontendLoginLoginForm plugin
-        privilegeTarget: 'Flowpack.Neos.FrontendLogin:LoginForm'
+        privilegeTarget: 'Bitmotion.Neos.FrontendLogin:LoginForm'
         permission: GRANT
 
-  'Flowpack.Neos.FrontendLogin:User':
+  'Bitmotion.Neos.FrontendLogin:User':
     privileges:
       -
           # Grant "frontend users" access to the FrontendLoginProfile plugin
-        privilegeTarget: 'Flowpack.Neos.FrontendLogin:UserProfile'
+        privilegeTarget: 'Bitmotion.Neos.FrontendLogin:UserProfile'
         permission: GRANT
 
   'TYPO3.Neos:Editor':
     privileges:
       -
           # Grant "backend users" access to the FrontendLoginProfile plugin - the login form plugin is granted to Everybody (see above)
-        privilegeTarget: 'Flowpack.Neos.FrontendLogin:UserProfile'
+        privilegeTarget: 'Bitmotion.Neos.FrontendLogin:UserProfile'
         permission: GRANT

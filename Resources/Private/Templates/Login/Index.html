@@ -8,7 +8,7 @@
 				</f:then>
 				<f:else>
 					<f:flashMessages class="flashmessages" />
-					<f:security.ifHasRole role="Flowpack.Neos.FrontendLogin:User">
+					<f:security.ifHasRole role="Bitmotion.Neos.FrontendLogin:User">
 						<f:then>
 							<p>You're logged in as <strong>"{account.accountIdentifier}"</strong></p>
 							<f:form action="logout" method="post" class="form-horizontal clearfix" additionalAttributes="{role:'form'}">

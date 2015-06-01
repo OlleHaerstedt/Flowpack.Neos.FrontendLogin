@@ -1,14 +1,14 @@
 <?php
-namespace Flowpack\Neos\FrontendLogin\Controller;
+namespace Bitmotion\Neos\FrontendLogin\Controller;
 
 /*                                                                             *
- * This script belongs to the TYPO3 Flow package "Flowpack.Neos.FrontendLogin".*
+ * This script belongs to the TYPO3 Flow package "Bitmotion.Neos.FrontendLogin".*
  *                                                                             */
 
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Mvc\Controller\ActionController;
-use Flowpack\Neos\FrontendLogin\Domain\Model\User;
-use Flowpack\Neos\FrontendLogin\Domain\Service\FrontendUserService;
+use Bitmotion\Neos\FrontendLogin\Domain\Model\User;
+use Bitmotion\Neos\FrontendLogin\Domain\Service\FrontendUserService;
 
 /**
  * Controller for displaying a simple user profile for frontend users
