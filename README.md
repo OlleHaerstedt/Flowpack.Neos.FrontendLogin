@@ -12,7 +12,7 @@ The good news is: We're working hard on improving support for Frontend-Logins.
 How-To:
 -------
 
-* Install the package to ``Packages/Plugin/Bitmotion.Neos.FrontendLogin`` (e.g. via ``composer require flowpack/neos-frontendlogin:dev-master``)
+* Install the package to ``Packages/Plugin/Bitmotion.Neos.FrontendLogin`` (e.g. via ``composer require bitmotion/neos-frontendlogin:dev-master``)
 * Run database migrations: ``./flow doctrine:migrate``
 * Login to the TYPO3 Neos backend and create a new page "Login" (e.g. at ``/login``)
 * On that page insert the new plugin ``Frontend login form``
