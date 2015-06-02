@@ -4,9 +4,9 @@ TYPO3:
     security:
       authentication:
         providers:
-          #'Typo3BackendProvider':
-          #requestPatterns:
-          #'Bitmotion\Neos\FrontendLogin\Security\NeosRequestPattern': 'backend'
+          'Typo3BackendProvider':
+            requestPatterns:
+              'Bitmotion\Neos\FrontendLogin\Security\NeosRequestPattern': 'backend'
           'Bitmotion.Neos.FrontendLogin:Frontend':
             provider: 'PersistedUsernamePasswordProvider'
             requestPatterns:
