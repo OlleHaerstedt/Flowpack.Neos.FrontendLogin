@@ -7,6 +7,7 @@ namespace Bitmotion\Neos\FrontendLogin\Command;
 
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Cli\CommandController;
+use TYPO3\Neos\Domain\Service\UserService;
 use Bitmotion\Neos\FrontendLogin\Domain\Model\User;
 use Bitmotion\Neos\FrontendLogin\Domain\Service\FrontendUserService;
 
@@ -16,8 +17,18 @@ use Bitmotion\Neos\FrontendLogin\Domain\Service\FrontendUserService;
 class FrontendUserCommandController extends CommandController {
 
 	/**
+   * Bitmotion user service
+   *
 	 * @Flow\Inject
 	 * @var FrontendUserService
+	 */
+	protected $frontEndUserService;
+
+	/**
+   * Neos user service
+   *
+	 * @Flow\Inject
+	 * @var UserService
 	 */
 	protected $userService;
 
@@ -31,13 +42,33 @@ class FrontendUserCommandController extends CommandController {
 	 * @return void
 	 */
 	public function createCommand($username, $password, $givenName, $familyName) {
-		$user = $this->userService->getUser($username);
+		$user = $this->frontEndUserService->getUser($username);
 		if ($user instanceof User) {
 			$this->outputLine('The username "%s" is already in use', array($username));
 			$this->quit(1);
 		}
 		$user = new User($givenName, $familyName);
-		$this->userService->addUser($user, $username, $password);
+		$this->frontEndUserService->addUser($user, $username, $password);
 	}
+
+  /**
+   * Add a role to a front-end user
+   *
+   * @param string $username
+   * @param string $roleIdentifier
+   */
+  public function addRoleCommand($username, $roleIdentifier) {
+    $user = $this->frontEndUserService->getUser($username);
+
+    if (!($user instanceof User)) {
+      $this->outputLine('No such user: %s', array($username));
+      $this->quit(1);
+    }
+    $accounts = $user->getAccounts();
+
+    assert(count($accounts) === 1, 'Only one account per user');
+
+    $this->userService->addRoleToAccount($accounts[0], $roleIdentifier);
+  }
 
 }
